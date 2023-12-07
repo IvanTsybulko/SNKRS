@@ -1,0 +1,144 @@
+.container{
+  margin: 50px;
+}
+.single-product{
+  display: flex;
+  justify-content: space-around;
+}
+
+.images{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.main-img{
+  max-width: 600px;
+  margin-bottom: 40px;
+  align-self: center;
+}
+
+.secondary-imgs img{
+  max-width: 120px;
+}
+
+.secondary-imgs img:hover{
+  box-shadow: 0px 0px 20px 0px ;
+  border-radius: 15px;
+}
+
+.secondary-imgs{
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.details{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.size{
+  align-self: center;
+  font-size: 26px;
+}
+
+.select-add{
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.sizes{
+  padding: 20px;
+  width: 100px;
+  height: 70px;
+  margin-bottom: 20px;
+
+  background-color: white;
+  border-radius: 10px;
+}
+
+.sizes:hover{
+  background-color: black;
+  color: white;
+}
+
+.add-to-cart{
+  height: 70px;
+  width: 150px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.add-to-cart:hover{
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.brand{
+  align-self: end;
+  background-color: black;
+  border-radius: 10px;
+  padding: 5px;
+  color: white;
+  font-size: 28px;
+}
+
+.model{
+  text-transform: uppercase;
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.price{
+  margin-top: 20px;
+  font-size: 26px;
+  color: green;
+}
+
+.product-details{
+  font-size: 20px;
+}
+
+@media (max-width: 1200px) {
+  .single-product{
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+  .main-img{
+    width: 80%;
+  }
+
+  .images{
+    margin-bottom: 60px;
+    width: 100%;
+  }
+
+  .secondary-imgs{
+    display: grid;
+    grid-template-columns: repeat(4,125px);
+    gap: 20px;
+  }
+
+  .details{
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px)
+{
+  .secondary-imgs{
+    grid-template-columns: repeat(2,125px);
+  }
+}
