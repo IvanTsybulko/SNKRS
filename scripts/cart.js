@@ -1,3 +1,50 @@
+function addCopy(productID, size){
+  let search = CartItems.find((x) => x.id === productID && x.size === size.toString());
+  search.item+=1;
+  localStorage.setItem('cart-items',JSON.stringify(CartItems));
+  generateTotalSum();
+  GenerateItems();
+  generateCartQuantity();
+  
+}
+
+function DeleateCopy(productID, size){
+  let search = CartItems.find((x) => x.id === productID && x.size === size.toString());
+  search.item-=1;
+
+  if(search.item == 0){
+    let index = CartItems.indexOf(search);
+    CartItems.splice(index,1);
+  }
+  localStorage.setItem('cart-items',JSON.stringify(CartItems));
+  generateTotalSum();
+  GenerateItems();
+  generateCartQuantity();
+}
+
+function addCopyA(productID){
+  let search = CartItems.find((x) => x.id === productID);
+  search.item+=1;
+  localStorage.setItem('cart-items',JSON.stringify(CartItems));
+  generateTotalSum();
+  GenerateItems();
+  generateCartQuantity();
+  
+}
+
+function DeleateCopyA(productID){
+  let search = CartItems.find((x) => x.id === productID);
+  search.item-=1;
+  if(search.item == 0){
+    let index = CartItems.indexOf(search);
+    CartItems.splice(index,1);
+  }
+  localStorage.setItem('cart-items',JSON.stringify(CartItems));
+  generateTotalSum();
+  GenerateItems();
+  generateCartQuantity();
+}
+
 function GenerateItems()
 {
   let html ="";
@@ -14,7 +61,7 @@ function GenerateItems()
               <h3 class="brand">${search.brand}</h3>
               <h1 class="model">${search.model}</h1>
               <h2 class="size">Size: ${item.size}</h2>
-              <h2 class="quantity">Quantity: x${item.item}</h2>
+              <h2 class="quantity"><i onclick="DeleateCopy(${item.id}, ${item.size})" class="bi bi-dash-circle"></i> ${item.item} <i onclick="addCopy(${item.id}, ${item.size})" class="bi bi-plus-circle"></i></h2>
               <h2 class="price">${search.price} лв.</h2>
             </div>
   
@@ -28,7 +75,7 @@ function GenerateItems()
             <div class="product-details">
               <h3 class="brand">${search.brand}</h3>
               <h1 class="model">${search.model}</h1>
-              <h2 class="quantity">Quantity: x${item.item}</h2>
+              <h2 class="quantity"><i onclick="DeleateCopyA(${item.id})" class="bi bi-dash-circle"></i> ${item.item} <i onclick="addCopyA(${item.id})" class="bi bi-plus-circle"></i></h2>
               <h2 class="price">${search.price} лв.</h2>
             </div>
   
@@ -61,7 +108,7 @@ function generateTotalSum(){
   CartItems.forEach(item => {
     let search = SneakerShopProductsData.find((x) => x.id === item.id);
 
-    totalSum+= search.price;
+    totalSum+= search.price * item.item;
   });
 
   let totalSumElement = document.getElementById('total-sum');

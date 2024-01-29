@@ -1,3 +1,8 @@
+function changeMainPhoto(x){
+  let mainImageElement = document.getElementById('main-img');
+  mainImageElement.src = x;
+}
+
 function GenerateSingleProduct()
 {
   let spElement = document.getElementById('single-product');
@@ -7,12 +12,12 @@ function GenerateSingleProduct()
   {
     spElement.innerHTML = `
     <div class="images">
-      <img class="main-img" src="${product.img}" alt="">
+      <img class="main-img" id="main-img" src="${product.img}" alt="">
       <div class="secondary-imgs">
-        <img src="${product.img}" alt="">
-        <img src="${product.img2}" alt="">
-        <img src="${product.img3}" alt="">
-        <img src="${product.img4}" alt="">
+        <img onclick="changeMainPhoto(this.src)" src="${product.img}" alt="">
+        <img onclick="changeMainPhoto(this.src)" src="${product.img2}" alt="">
+        <img onclick="changeMainPhoto(this.src)" src="${product.img3}" alt="">
+        <img onclick="changeMainPhoto(this.src)" src="${product.img4}" alt="">
       </div>
     </div>
 
@@ -46,10 +51,10 @@ function GenerateSingleProduct()
     <div class="images">
       <img class="main-img" src="${product.img}" alt="">
       <div class="secondary-imgs">
-        <img src="${product.img}" alt="">
-        <img src="${product.img}" alt="">
-        <img src="${product.img}" alt="">
-        <img src="${product.img}" alt="">
+        <img onclick="changeMainPhoto(this.src)" src="${product.img}" alt="">
+        <img onclick="changeMainPhoto(this.src)" src="${product.img2}" alt="">
+        <img onclick="changeMainPhoto(this.src)" src="${product.img3}" alt="">
+        <img onclick="changeMainPhoto(this.src)" src="${product.img4}" alt="">
       </div>
     </div>
 
