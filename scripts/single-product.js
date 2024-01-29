@@ -25,7 +25,7 @@ function GenerateSingleProduct()
       <span class="brand">${product.brand}</span>
       <h2 class="model">${product.model} </h2>
       <h4 class="price">${product.price} лв.</h4>
-      <p class="product-details">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem maiores nisi asperiores eaque possimus vitae, dolorum repellendus nihil sint ea!</p>
+      <p class="product-details">${product.details}</p>
 
       <h4 class="size">Size</h4>
       <div class="select-add">
@@ -62,7 +62,7 @@ function GenerateSingleProduct()
       <span class="brand">${product.brand}</span>
       <h2 class="model">${product.model} </h2>
       <h4 class="price">${product.price} лв.</h4>
-      <p class="product-details">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem maiores nisi asperiores eaque possimus vitae, dolorum repellendus nihil sint ea!</p>
+      <p class="product-details">${product.details}</p>
 
       <h4 class="size"></h4>
       <div class="select-add">

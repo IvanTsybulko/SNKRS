@@ -6,7 +6,8 @@ let SneakerShopProductsData = [
     brand:"Nike SB",
     model:"Nike SB x TIGHTBOOTH Dunk Low (2023)",
     price: 123,
-    sizes: [36,37,38]
+    sizes: [36,37,38],
+    details: "detaili na snikers"
   },
   {
     id: 2,
