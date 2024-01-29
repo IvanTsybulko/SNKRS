@@ -19,7 +19,7 @@ function GenerateSingleProduct()
     <div class="details">
       <span class="brand">${product.brand}</span>
       <h2 class="model">${product.model} </h2>
-      <h4 class="price">${product.price}$</h4>
+      <h4 class="price">${product.price} лв.</h4>
       <p class="product-details">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem maiores nisi asperiores eaque possimus vitae, dolorum repellendus nihil sint ea!</p>
 
       <h4 class="size">Size</h4>
@@ -56,7 +56,7 @@ function GenerateSingleProduct()
     <div class="details">
       <span class="brand">${product.brand}</span>
       <h2 class="model">${product.model} </h2>
-      <h4 class="price">${product.price}$</h4>
+      <h4 class="price">${product.price} лв.</h4>
       <p class="product-details">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem maiores nisi asperiores eaque possimus vitae, dolorum repellendus nihil sint ea!</p>
 
       <h4 class="size"></h4>
@@ -83,7 +83,7 @@ function AddSneakerToCart(){
     search.item += 1;
   }
   localStorage.setItem('cart-items',JSON.stringify(CartItems));
-  location.reload();
+  generateCartQuantity();
 }
 
 //dobavq aksesoar
@@ -100,7 +100,7 @@ function AddAccessoryToCart(){
     search.item += 1;
   }
   localStorage.setItem('cart-items',JSON.stringify(CartItems));
-  location.reload();
+  generateCartQuantity();
 }
 
 GenerateSingleProduct();

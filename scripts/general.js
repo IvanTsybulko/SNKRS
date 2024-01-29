@@ -5,7 +5,7 @@ let SneakerShopProductsData = [
     img: "imgs/sneaker1.webp",
     brand:"Nike SB",
     model:"Nike SB x TIGHTBOOTH Dunk Low (2023)",
-    price: 299,
+    price: 123,
     sizes: [36,37,38]
   },
   {
@@ -250,6 +250,29 @@ function OpenBrandShop(brand)//funkciqta koqto otvarq brand shopa
 
 let CartItems = JSON.parse(localStorage.getItem("cart-items")) || [];
 
+function ToggleNav()
+{
+  let NavElement = document.getElementById('responsive-nav');
+
+  if (NavElement.style.display ==="flex")
+  {
+    let brandsElement = document.getElementById('brands');
+    let brandsLabelElement = document.getElementById('brands-label');
+
+    if(brandsElement.classList.contains("active-brands"))
+    {
+      brandsElement.classList.toggle("active-brands");
+      brandsLabelElement.classList.toggle("active");
+    }
+
+    NavElement.style.display ="none";
+  }
+  else
+  {
+    NavElement.style.display ="flex";
+  }
+}
+
 //generira kolichestvoto na produktite i zamestva indeksa vurhu kolichkata s nego
 function generateCartQuantity(){
   let quantity = 0;
@@ -259,6 +282,8 @@ function generateCartQuantity(){
   });
 
   quantityElement = document.getElementById("cart-amount");
+  quantityResponsiveElement = document.getElementById("cart-amount-responsive");
+  quantityResponsiveElement.innerHTML = quantity;
   quantityElement.innerHTML = quantity;
 }
 
